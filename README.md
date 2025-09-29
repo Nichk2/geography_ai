@@ -2,6 +2,32 @@
 
 A modern chat application with a React frontend and Flask backend, powered by Ollama (Llama 3.2).
 
+## 🚀 [Live Demo](https://nichk2.github.io/geography_ai/)
+
+> **You're currently viewing the `demo` branch** - This contains the static version with mock responses that deploys to GitHub Pages.
+
+### Repository Branches:
+- **`main`**: Production version with full Flask backend and Ollama integration
+- **`demo`**: Static demo version with mock responses for GitHub Pages ← **You are here**
+
+### 🌐 Demo Version Features:
+- Static React app with mock AI responses
+- No backend required - runs entirely in the browser
+- Perfect for showcasing UI/UX and functionality
+- Deployed automatically via GitHub Actions to GitHub Pages
+
+### 🛠️ To run the demo locally:
+```bash
+cd frontend
+npm install
+npm run dev
+```
+Demo will be available at http://localhost:5173
+
+---
+
+**For the full AI-powered version, switch to the `main` branch.**
+
 ## Features
 
 - 🤖 AI-powered chat using Ollama with Llama 3.2 model
