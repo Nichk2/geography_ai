@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Menu from "./components/Menu/Menu"
+import DemoMenu from "./components/Menu/DemoMenu"
 import { ThemeProvider } from "./contexts/ThemeContext"
 
 function App() {
@@ -8,11 +8,10 @@ function App() {
   return (
     <ThemeProvider>
       <div className="min-h-screen custom-bg-primary transition-colors duration-300">
-        <Menu 
+        <DemoMenu 
           isOpen={isOpen} 
           setIsOpen={setIsOpen}
-          chats={[]}              
-          currentChatId={null}    
+          currentChatId={null}
           onSelectChat={() => {}} 
           onNewChat={() => {}}    
         />
