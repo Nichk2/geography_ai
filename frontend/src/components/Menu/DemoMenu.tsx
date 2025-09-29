@@ -77,7 +77,7 @@ const AnimatedWelcome = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        🚀 Demo Version - Try the chat interface!
+        Demo Version - Try the chat interface!
       </motion.p>
 
       <motion.div
