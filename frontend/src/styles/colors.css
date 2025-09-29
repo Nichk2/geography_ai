@@ -1,0 +1,70 @@
+/* 
+ * Manual Color System for Planet Atlas
+ * 
+ * This file contains all the color variables used throughout the app.
+ * Modify these values to change the entire color scheme.
+ * 
+ * Usage: Use the custom-* classes in your components instead of Tailwind classes
+ * Example: custom-bg-primary, custom-text-secondary, custom-border-primary
+ */
+
+:root {
+  /* Light Mode Colors */
+  --bg-primary: #f9fafb;        /* Main background */
+  --bg-secondary: #ffffff;      /* Cards, modals, sidebar */
+  --bg-tertiary: #f3f4f6;       /* Buttons, inputs */
+  --text-primary: #111827;      /* Main text */
+  --text-secondary: #6b7280;    /* Secondary text */
+  --text-tertiary: #9ca3af;     /* Muted text */
+  --border-primary: #e5e7eb;    /* Main borders */
+  --border-secondary: #d1d5db;  /* Secondary borders */
+  --accent-primary: #f97316;    /* Orange accent */
+  --accent-secondary: #ea580c;  /* Darker orange */
+  --hover-bg: #f3f4f6;          /* Hover backgrounds */
+  --shadow: rgba(0, 0, 0, 0.1); /* Shadows */
+}
+
+.dark {
+  /* Dark Mode Colors */
+  --bg-primary: #111827;        /* Main background */
+  --bg-secondary: #1f2937;      /* Cards, modals, sidebar */
+  --bg-tertiary: #374151;       /* Buttons, inputs */
+  --text-primary: #f9fafb;      /* Main text */
+  --text-secondary: #d1d5db;    /* Secondary text */
+  --text-tertiary: #9ca3af;     /* Muted text */
+  --border-primary: #374151;    /* Main borders */
+  --border-secondary: #4b5563;  /* Secondary borders */
+  --accent-primary: #f97316;    /* Orange accent */
+  --accent-secondary: #ea580c;  /* Darker orange */
+  --hover-bg: #374151;          /* Hover backgrounds */
+  --shadow: rgba(0, 0, 0, 0.3); /* Shadows */
+}
+
+/* 
+ * CUSTOMIZATION GUIDE:
+ * 
+ * 1. Background Colors:
+ *    - --bg-primary: Main page background
+ *    - --bg-secondary: Sidebar, cards, modals
+ *    - --bg-tertiary: Buttons, input fields
+ * 
+ * 2. Text Colors:
+ *    - --text-primary: Main headings and important text
+ *    - --text-secondary: Body text, labels
+ *    - --text-tertiary: Muted text, placeholders
+ * 
+ * 3. Border Colors:
+ *    - --border-primary: Main borders, dividers
+ *    - --border-secondary: Subtle borders
+ * 
+ * 4. Accent Colors:
+ *    - --accent-primary: Primary brand color
+ *    - --accent-secondary: Hover states for accent
+ * 
+ * 5. Interactive Colors:
+ *    - --hover-bg: Background color for hover states
+ *    - --shadow: Shadow color for depth
+ * 
+ * To change colors, simply modify the hex values above.
+ * The changes will automatically apply to both light and dark modes.
+ */

@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+/* design system */
+@layer base {
+  :root {
+    color-scheme: light;
+    
+    /* Light Mode Colors */
+    --bg-primary: #f9fafb;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f3f4f6;
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+    --text-tertiary: #9ca3af;
+    --border-primary: #e5e7eb;
+    --border-secondary: #d1d5db;
+    --accent-primary: #DC143C;
+    --accent-secondary: #e92b51;
+    --hover-bg: #f3f4f6;
+    --hover-bg-secondary: #dbdbdb;
+    --hover-bg-tertiary: #e6e6e6;
+    --shadow: rgba(0, 0, 0, 0.1);
+  }
+  
+  .dark {
+    color-scheme: dark;
+    
+    /* Dark Mode Colors */
+    --bg-primary: #111827;
+    --bg-secondary: #1f2937;
+    --bg-tertiary: #374151;
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --text-tertiary: #9ca3af;
+    --border-primary: #374151;
+    --border-secondary: #4b5563;
+    --accent-primary: #DC143C;
+    --accent-secondary: #e92b51;
+    --hover-bg: #374151;
+    --hover-bg-secondary: #89919c;  
+    --hover-bg-tertiary: #d3d3d39b;
+    --shadow: rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Apply custom colors to elements */
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .custom-bg-primary {
+    background-color: var(--bg-primary);
+  }
+  
+  .custom-bg-secondary {
+    background-color: var(--bg-secondary);
+  }
+  
+  .custom-bg-tertiary {
+    background-color: var(--bg-tertiary);
+  }
+  
+  .custom-text-primary {
+    color: var(--text-primary);
+  }
+  
+  .custom-text-secondary {
+    color: var(--text-secondary);
+  }
+  
+  .custom-text-tertiary {
+    color: var(--text-tertiary);
+  }
+  
+  .custom-border-primary {
+    border-color: var(--border-primary);
+  }
+  
+  .custom-border-secondary {
+    border-color: var(--border-secondary);
+  }
+  
+  .custom-hover-bg:hover {
+    background-color: var(--hover-bg);
+  }
+  
+  .custom-hover-bg-secondary:hover {
+    background-color: var(--hover-bg-secondary);
+  }
+
+  .custom-hover-bg-tertiary:hover {
+    background-color: var(--hover-bg-tertiary);
+  }
+  
+  .custom-shadow {
+    box-shadow: 0 4px 6px -1px var(--shadow);
+  }
+  
+  .custom-accent {
+    background-color: var(--accent-primary);
+  }
+  
+  .custom-accent:hover {
+    background-color: var(--accent-secondary);
+  }
+}
