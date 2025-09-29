@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import { Send } from "lucide-react"
-import { useTheme } from "../../contexts/ThemeContext"
 
 interface ChatInputProps {
   onSendMessage: (message: string) => void;
@@ -10,7 +9,6 @@ interface ChatInputProps {
 }
 
 const ChatInput = ({ onSendMessage, isLoading = false, placeholder = "What is your message, explorer?" }: ChatInputProps) => {
-  const { theme } = useTheme()
   const [inputValue, setInputValue] = useState("")
   const textareaRef = useRef<HTMLTextAreaElement>(null)
 
