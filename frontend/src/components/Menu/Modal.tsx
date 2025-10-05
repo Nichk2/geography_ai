@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { AlertTriangle, X } from 'lucide-react'
+import { createPortal } from 'react-dom'
 
 interface ModalProps {
   isOpen: boolean
@@ -45,7 +46,7 @@ const Modal = ({
 
   const styles = variantStyles[variant]
 
-  return (
+  return createPortal(
     <AnimatePresence>
       {isOpen && (
         <>
@@ -54,7 +55,16 @@ const Modal = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            className="fixed top-0 left-0 right-0 bottom-0 bg-black/30 backdrop-blur-sm z-50 flex items-center justify-center p-4 sm:p-6"
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              width: '100vw',
+              height: '100vh'
+            }}
             onClick={onClose}
           >
             {/* Modal */}
@@ -63,7 +73,7 @@ const Modal = ({
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="custom-bg-secondary rounded-2xl custom-shadow w-full max-w-md overflow-hidden"
+              className="custom-bg-secondary rounded-2xl custom-shadow w-full max-w-sm sm:max-w-md overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header */}
@@ -112,7 +122,8 @@ const Modal = ({
           </motion.div>
         </>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   )
 }
 
