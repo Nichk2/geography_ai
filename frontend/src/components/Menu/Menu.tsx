@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import Lottie from "lottie-react";
 import {
   Plus,
   Settings,
   User,
-  Globe,
   PanelRightOpen,
   PanelLeftOpen,
   Sun,
@@ -12,6 +13,8 @@ import {
   Menu as MenuIcon,
   X,
 } from "lucide-react";
+import logoAnimation from "../../assets/Logo_animation.json";
+import logoMenuAnimation from "../../assets/Logo_menu.json";
 import { useTheme } from "../../contexts/ThemeContext";
 import ChatHistory from "./ChatHistory";
 import ChatWindow from "./ChatWindow";
@@ -46,22 +49,36 @@ interface MenuProps {
 const AnimatedWelcome = () => {
   return (
     <div className="text-center mt-20">
+      <motion.div
+        className="flex justify-center mb-8"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <Lottie 
+          animationData={logoAnimation} 
+          loop={true}
+          autoplay={true}
+          style={{ width: 120, height: 120 }}
+        />
+      </motion.div>
+      
       <motion.h1
         className="text-2xl md:text-3xl font-bold custom-text-primary"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
       >
         Welcome to Planet Atlas
       </motion.h1>
 
       <motion.p
-        className="mt-4 text-base custom-text-secondary"
+        className="mt-4 text-base custom-text-secondary max-w-md mx-auto"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.5 }}
+        transition={{ duration: 1, delay: 0.6 }}
       >
-        Start a new chat to begin
+        Your AI-powered assistant ready to help you explore, learn, and create. Start a new conversation to begin your journey.
       </motion.p>
     </div>
   );
@@ -426,8 +443,13 @@ const Menu = ({
               {/* Show logo only when open */}
               {((!isMobile && isOpen) || (isMobile && mobileMenuOpen)) && (
                 <>
-                  <div className="w-8 h-8 custom-accent rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Globe size={18} className="text-white" />
+                  <div className="w-8 h-8 flex items-center justify-center flex-shrink-0">
+                    <Lottie 
+                      animationData={logoMenuAnimation} 
+                      loop={true}
+                      autoplay={true}
+                      style={{ width: 32, height: 32 }}
+                    />
                   </div>
                   <span className="font-semibold custom-text-primary whitespace-nowrap">
                     Planet Atlas
@@ -506,7 +528,8 @@ const Menu = ({
                 </span>
               )}
             </button>
-            <button
+            <Link
+              to="/settings"
               className={`flex items-center gap-3 custom-text-secondary cursor-pointer custom-hover-bg rounded-lg p-2 transition-colors ${
                 (!isMobile && isOpen) || (isMobile && mobileMenuOpen)
                   ? "justify-start"
@@ -517,8 +540,9 @@ const Menu = ({
               {((!isMobile && isOpen) || (isMobile && mobileMenuOpen)) && (
                 <span className="text-sm whitespace-nowrap">Settings</span>
               )}
-            </button>
-            <button
+            </Link>
+            <Link
+              to="/profile"
               className={`flex items-center gap-3 custom-text-secondary cursor-pointer custom-hover-bg rounded-lg p-2 transition-colors ${
                 (!isMobile && isOpen) || (isMobile && mobileMenuOpen)
                   ? "justify-start"
@@ -529,7 +553,7 @@ const Menu = ({
               {((!isMobile && isOpen) || (isMobile && mobileMenuOpen)) && (
                 <span className="text-sm whitespace-nowrap">Account</span>
               )}
-            </button>
+            </Link>
           </div>
         </div>
       </motion.div>
@@ -545,8 +569,13 @@ const Menu = ({
               <MenuIcon size={20} />
             </button>
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 custom-accent rounded-lg flex items-center justify-center">
-                <Globe size={16} className="text-white" />
+              <div className="w-8 h-8 flex items-center justify-center">
+                <Lottie 
+                  animationData={logoMenuAnimation} 
+                  loop={true}
+                  autoplay={true}
+                  style={{ width: 32, height: 32 }}
+                />
               </div>
               <span className="font-semibold custom-text-primary text-sm">
                 Planet Atlas
