@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import Lottie from "lottie-react";
 import {
   Plus,
   Settings,
@@ -12,9 +11,8 @@ import {
   Moon,
   Menu as MenuIcon,
   X,
+  Globe,
 } from "lucide-react";
-import logoAnimation from "../../assets/Logo_animation.json";
-import logoMenuAnimation from "../../assets/Logo_menu.json";
 import { useTheme } from "../../contexts/ThemeContext";
 import ChatHistory from "./ChatHistory";
 import ChatWindow from "./ChatWindow";
@@ -46,43 +44,40 @@ interface MenuProps {
 /* ======================
    Simplified Welcome
    ====================== */
-const AnimatedWelcome = () => {
-  return (
-    <div className="text-center mt-20">
-      <motion.div
-        className="flex justify-center mb-8"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <Lottie 
-          animationData={logoAnimation} 
-          loop={true}
-          autoplay={true}
-          style={{ width: 120, height: 120 }}
-        />
-      </motion.div>
-      
-      <motion.h1
-        className="text-2xl md:text-3xl font-bold custom-text-primary"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-      >
-        Welcome to Planet Atlas
-      </motion.h1>
-
-      <motion.p
-        className="mt-4 text-base custom-text-secondary max-w-md mx-auto"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.6 }}
-      >
-        Your AI-powered assistant ready to help you explore, learn, and create. Start a new conversation to begin your journey.
-      </motion.p>
-    </div>
-  );
-};
+   const AnimatedWelcome = () => {
+    return (
+      <div className="flex flex-col items-center justify-center mt-20">
+        <motion.div
+          className="mb-6"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="w-48 h-48 flex items-center justify-center">
+            <Globe size={120} className="custom-text-primary" strokeWidth={1.5} />
+          </div>
+        </motion.div>
+        
+        <motion.h1
+          className="text-2xl md:text-3xl font-bold custom-text-primary mb-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          Welcome to Planet Atlas
+        </motion.h1>
+  
+        <motion.p
+          className="text-base custom-text-secondary max-w-md text-center px-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.6 }}
+        >
+          Your AI-powered assistant ready to help you explore, learn, and create. Start a new conversation to begin your journey.
+        </motion.p>
+      </div>
+    );
+  };
 
 /* ======================
    Storage helpers
@@ -444,12 +439,7 @@ const Menu = ({
               {((!isMobile && isOpen) || (isMobile && mobileMenuOpen)) && (
                 <>
                   <div className="w-8 h-8 flex items-center justify-center flex-shrink-0">
-                    <Lottie 
-                      animationData={logoMenuAnimation} 
-                      loop={true}
-                      autoplay={true}
-                      style={{ width: 32, height: 32 }}
-                    />
+                    <Globe size={28} className="custom-text-primary" />
                   </div>
                   <span className="font-semibold custom-text-primary whitespace-nowrap">
                     Planet Atlas
@@ -570,12 +560,7 @@ const Menu = ({
             </button>
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 flex items-center justify-center">
-                <Lottie 
-                  animationData={logoMenuAnimation} 
-                  loop={true}
-                  autoplay={true}
-                  style={{ width: 32, height: 32 }}
-                />
+                <Globe size={28} className="custom-text-primary" />
               </div>
               <span className="font-semibold custom-text-primary text-sm">
                 Planet Atlas
